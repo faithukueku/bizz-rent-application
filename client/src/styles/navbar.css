@@ -1,0 +1,15 @@
+.nav {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    padding: 1.1rem;
+    
+   
+  }
+  
+  .nav .nav-header {
+    margin-right: auto;
+    margin-left: 24px;
+    margin-bottom:20px;
+  }
+ 

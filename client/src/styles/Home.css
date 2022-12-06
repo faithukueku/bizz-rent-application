@@ -1,14 +1,18 @@
 .content-landing {
     background-color: rgb(255, 255, 255);
     padding: 2.5rem;
+;
+    
+  
   }
   
   .landing-image {
-    /* background-image: url("../images/health-fitness.jpg"); */
+    background-image: url("../assets/images/home-image.jpg");
     background-color: rgb(253, 253, 253);
     background-position: center;
     background-size: cover;
     height: 500px;
+    
   }
   .content-landing P {
     padding: 2rem;
