@@ -6,7 +6,6 @@ import Navbar from "../components/Navbar";
 const Home = () => {
   return (
     <div className="landing-container  row justify-content-center">
-      <Navbar />
       <div className="content-landing col-md-6 order-sm-1">
         <h1>Bizz rent</h1>
         <p>
@@ -23,6 +22,9 @@ const Home = () => {
           <div className="contain-btn">
             <div className="btn custom">
               <Link to="/signUp">Get started</Link>{" "}
+            </div>
+            <div className="btn custom">
+              <Link to="/listings">View Properties</Link>{" "}
             </div>
           </div>
         </div>

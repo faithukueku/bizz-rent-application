@@ -30,25 +30,23 @@
   }
   
   .custom {
-    background-color: rgb(243, 243, 243);
     margin-right: 5px;
     transition: 0.5s;
     height: fit-content;
+    border: 1px solid red;
     padding: 5px 10px;
-  }
-  .custom:nth-child(2) {
     background-color: rgb(238, 194, 211);
-  }
-  .custom:nth-child(2) a {
-    color: rgb(39, 39, 39);
   }
   .custom a {
     font-family: sans-serif;
     font-weight: bolder;
     text-decoration: none;
-    padding: 10px;
-  
-    color: rgb(40, 136, 160);
+    padding: 20px;
+    color: rgb(15, 15, 15);
+  }
+  .custom a:hover {
+    color: rgb(15, 15, 15);
+    text-decoration: underline;
   }
   .custom:hover {
     background-color: rgb(224, 103, 103);
