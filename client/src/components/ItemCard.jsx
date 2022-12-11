@@ -1,12 +1,15 @@
 import shopImage from "../assets/images/shop.jpeg"
 import "../styles/Listings.css"
+import { Link } from "react-router-dom";
 import mockImage from  "../assets/images/mock-image.jpg"
 import mockImage2 from  "../assets/images/mock-image-4.jpg"
 import mockImage3 from  "../assets/images/mock-image-3.jpg"
-const ItemCard = ()=>{
+import { useNavigate } from "react-router-dom";
+const ItemCard = ({id})=>{
+const navigate = useNavigate()
 
     return(
-        <div className="item-card">
+        <div className="item-card" onClick={()=>navigate(`/listings/${id}`)}>
            <div className="right-card">
             <div className="inner-image-1">
                 <img src={mockImage} style={{width:"90%",height:"100%"}}></img>

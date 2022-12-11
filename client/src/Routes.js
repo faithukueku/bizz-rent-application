@@ -3,8 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp"
 import Listings from "./pages/Listings"
-// import Products from "./pages/Products";
-// import Product from "./pages/Product";
+import ListingsItem from "./pages/ListingsItem";
 
 export default function Routes() {
   return (
@@ -12,11 +11,10 @@ export default function Routes() {
       <Route path="/" element={<Home/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<SignUp/>} />
-      <Route path="/listings" element={<Listings/>} />
-      {/* <Route path="products">
-        <Route index element={<Products />} />
-        <Route path=":productId" element={<Product />} />
-      </Route> */}
+      <Route path="/listings">
+        <Route index element={<Listings/>} />
+        <Route path=":listId" element={<ListingsItem/>} />
+      </Route>
     </BaseRoutes>
   );
 }

@@ -21,7 +21,8 @@ p {
   box-sizing: border-box;
 }
 
-nav {
+.navigation {
+  margin: 20px 0px 20px 20px;
   display: flex;
 }
 nav h1 {
@@ -40,7 +41,9 @@ nav h1 {
   align-items: flex-end;
   justify-content: flex-end;
 }
-h3 {
-  color: rgb(199, 148, 192);
+
+img {
+  object-fit: contain;
 }
+
 

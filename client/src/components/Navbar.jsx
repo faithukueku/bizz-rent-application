@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import logo from "../assets/images/Bizz.png"
 const Navbar = () => {
   return (
-    <div className="nav">
-      <h3 className="nav-header"><img style={{height:"70px"}}src={logo}/></h3>
+    <div className="navigation">
+  <img style={{height:"70px"}}src={logo}/>
     </div>
   );
 };
