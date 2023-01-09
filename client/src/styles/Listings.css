@@ -118,13 +118,33 @@ height: 100%;
     padding: 2px;
     top: 200px;
     left: 300px;
-    
-   
-
 }
+
+.description{
+    padding: 10px;
+    margin:10px 0px 0px 10px
+}
+
 
 .sales-banner h3{
     font-size: 18px;
     text-align: center;
+}
 
+.cost-calc{
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+.form-group{
+    margin: 20px;
+}
+
+.submit-btn{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
 }
