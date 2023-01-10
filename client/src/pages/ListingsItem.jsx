@@ -55,7 +55,7 @@ const ListingsItem = ()=>{
    <h1>Lagos island office</h1>
             </div>
 <div className="image-row">
-    <div className="sales-banner"><h3>From #90000</h3></div>
+   
     <div className="inner">
 <img className="image-s" src={mockImage3}></img>
 <img className="image-s" src={mockImage3}></img>
@@ -72,13 +72,14 @@ The centre is close to the headquarters of companies from finance, commerce, ene
 This spacious centre spans three floors of a striking glass-fronted high rise that’s sure to impress your visitors. And while you're close to thriving businesses and networking opportunities, you'll also be moments from a choice of world-class restaurants, bars and retailers.
 
 Excellent transport links for a convenient commute 24-hour access so you can work your own way A professional location at the centre of Victoria Island Stunning views over the Lagos skyline Business lounge access for working on the move Professional meeting rooms so you can bring people together</p>
-</div>
 
 <div className="cost-calc">
     <h3>What will it cost ?</h3>
     <h5>Office space from #92000</h5>
-    <button className="btn btn-primary" onClick={openModal}>Make payments</button>
+    <button className="btn btn-pr" onClick={openModal}>Make payments</button>
 </div>
+</div>
+
 
 
         </div>

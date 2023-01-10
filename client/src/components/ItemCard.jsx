@@ -29,7 +29,7 @@ const navigate = useNavigate()
             </p>
             </div>
             <div className="btn-container">
-                <button className="btn btn-primary">Book now</button>
+                <button className="btn btn-pr">Book now</button>
             </div>
            </div>
         </div>

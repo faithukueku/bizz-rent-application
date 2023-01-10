@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="landing-container  row justify-content-center">
       <div className="content-landing col-md-6 order-sm-1">
-        <h1>Bizz rent</h1>
+       
         <p>
           {" "}
         Renting made easy
@@ -20,19 +20,16 @@ const Home = () => {
         </div>
         <div className="login">
           <div className="contain-btn">
-            <div className="btn custom">
+            <div className="btn custom1 custom">
               <Link to="/signUp">Get started</Link>{" "}
             </div>
-            <div className="btn custom">
+            <div className="btn custom2 custom">
               <Link to="/listings">View Properties</Link>{" "}
             </div>
           </div>
         </div>
       </div>
       <div className="landing-image col-md-5 order--2">
-        {/* <img src={Image}>
-          
-          </img>  */}
       </div>
     </div>
   );

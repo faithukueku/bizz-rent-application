@@ -7,7 +7,7 @@
   }
   
   .landing-image {
-    background-image: url("../assets/images/home-image.jpg");
+    background-image: url("../assets/images/background.jpeg");
     background-color: rgb(253, 253, 253);
     background-position: center;
     background-size: cover;
@@ -45,15 +45,19 @@
     color: rgb(15, 15, 15);
   }
   .custom a:hover {
-    color: rgb(15, 15, 15);
-    text-decoration: underline;
+    text-decoration: none;
   }
-  .custom:hover {
-    background-color: rgb(224, 103, 103);
+ 
+  .custom1 a:hover:nth-child(1){
+    background-color: rgb(243, 108, 108);
+    color: #fff;
   }
-  .custom:nth-child(2):hover {
-    background-color: rgb(221, 177, 195);
+
+  .custom2 a:hover:nth-child(1){
+    background-color: #fff;
+    color: rgb(243, 108, 108);
   }
+  
   
   @media screen and (max-width: 340px) {
     .content-landing {

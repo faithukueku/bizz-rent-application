@@ -4,7 +4,7 @@ const SearchForm = ()=>{
             <form>
                 <input type="text" placeholder="Search a location"></input>
             </form>
-             <button className="btn btn-primary">search</button>
+             <button className="btn btn-pr">search</button>
         </div>
     )
 }

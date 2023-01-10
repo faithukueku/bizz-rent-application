@@ -21,7 +21,7 @@ const PaymentForm = ()=>{
   </div>
 
 <div className="submit-btn">
-  <button type="submit" class="btn btn-primary">Pay now</button>
+  <button type="submit" class="btn btn-pr">Pay now</button>
 </div>
 </form>
 
