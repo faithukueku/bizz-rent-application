@@ -31,6 +31,7 @@ const start = async () => {
 start();
 
 app.use(express.json());
+app.use(cors()); // cross origin access
 app.use("/api/", login);
 app.use("/api/", signUp);
 
