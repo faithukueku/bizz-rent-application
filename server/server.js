@@ -29,7 +29,10 @@ const start = async () => {
 };
 
 start();
+
 app.use(express.json());
+app.use("/api/", login);
+app.use("/api/", signUp);
 
 // error 404
 app.all("*", (req, res) => {
