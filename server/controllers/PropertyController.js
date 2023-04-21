@@ -1,6 +1,6 @@
 const PropertyModel = require('../models/Property');
 
-createProperty = async (req, res, next) => {
+const createProperty = async (req, res, next) => {
   try {
    
     const { name, address, city, state, offices, bathrooms, rent, availableDate,landlord } = req.body;

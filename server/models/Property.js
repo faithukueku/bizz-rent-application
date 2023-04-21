@@ -33,11 +33,16 @@ const rentalPropertySchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-
+  isBooked:Boolean,
+  
   landlord: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Landlord',
     required: true
+  },
+  paymentType:{
+    type:String,
+    enum:["monthly","yearly","weekly"]
   }
 });
 
