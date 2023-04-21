@@ -29,3 +29,21 @@ export const signup = async (name, email, password,phoneNumber) => {
     throw new Error(error.response.data.message);
   }
 };
+
+export const getProperties = async () => {
+  try {
+    const response = await instance.get('/api/properties');
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
+};
+
+export const getPropertiesById = async (id) => {
+  try {
+    const response = await instance.get(`/api/properties/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
+  }
+};

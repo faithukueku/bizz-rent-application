@@ -1,10 +1,27 @@
 import "../styles/Listings.css"
 import ItemCard from "../components/ItemCard"
-import { useState } from "react"
+import { useState ,useEffect} from "react"
 import SearchForm from "../components/SearchForm"
+import { getProperties } from "../services/service"
+import Spinner from "../components/Spinner"
 
 const Listings = ()=>{
  const [location,setLocation] = useState("Lagos")
+ const [properties,setProperties] = useState([])
+ const [loading,setLoading] = useState(false)
+
+
+
+useEffect(()=>{
+    setLoading(true)
+    getProperties().then((data)=>{
+        setProperties(data.data)
+        setLoading(false)
+        console.log(data)
+    })
+},[])
+
+
     return (
         <div className="main-container-listing ">
 <div className = "listing-header">
@@ -12,7 +29,19 @@ const Listings = ()=>{
     <SearchForm/>
 </div>
 <div>
-<ItemCard id={"29201219dhdj"}/>
+
+    {/*map through list item*/}
+
+    {
+        loading ? <Spinner/> :  
+            properties.map((item)=>{
+                return(
+                    <ItemCard id={item._id} item={item}/>
+                )
+            })
+        
+    }
+
 
   </div>
             

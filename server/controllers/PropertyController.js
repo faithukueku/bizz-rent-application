@@ -4,7 +4,7 @@ const paginate = require("../utils/paginate")
 const createProperty = async (req, res, next) => {
   try {
    
-    const { name, address, city, state, offices, bathrooms, rent, availableDate,landlord } = req.body;
+    const { name, address, city, state, offices,images, bathrooms, rent, isAvailable,landlord } = req.body;
 
     const newProperty = new PropertyModel({
       name,
@@ -14,8 +14,9 @@ const createProperty = async (req, res, next) => {
       offices,
       bathrooms,
       rent,
-      availableDate,
-      landlord
+      isAvailable,
+      landlord,
+      images
     });
 
     // Save the  property instance to the database
@@ -35,23 +36,10 @@ const createProperty = async (req, res, next) => {
 const getAllProperties = async (req, res) => {
   try {
    
-    const { state = null, city = null } = req.query;
-
-
-    const baseQuery = {
-      user: userId,
-  state,
-  city
-    };
-
-    if (search) {
-      const regex = new RegExp(search, "gi");
-      baseQuery.subject = regex;
-    }
-
-    const properties = await paginate(PropertyModel, baseQuery, req.query);
+   
+    const properties = await PropertyModel.find({})
  
-    res.json(properties);
+    res.status(200).json({data:properties,message:"fetched successfully"});
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -60,13 +48,14 @@ const getAllProperties = async (req, res) => {
 // Get a single  property by ID
 const getPropertyById = async (req, res) => {
   try {
-    const Property = await Property.findById(req.params.id);
+    const Property = await PropertyModel.findById(req.params.id);
     if (Property) {
       res.json(Property);
     } else {
       res.status(404).json({ message: ' property not found' });
     }
   } catch (error) {
+   
     res.status(500).json({ message: error.message });
   }
 };
@@ -74,7 +63,7 @@ const getPropertyById = async (req, res) => {
 // Update a  property by ID
 const updatePropertyById = async (req, res) => {
   try {
-    const Property = await Property.findById(req.params.id);
+    const Property = await PropertyModel.findById(req.params.id);
     if (Property) {
       Property.name = req.body.name || Property.name;
       Property.address = req.body.address || Property.address;
@@ -94,7 +83,7 @@ const updatePropertyById = async (req, res) => {
 // Delete a  property by ID
 const deletePropertyById = async (req, res) => {
   try {
-    const Property = await Property.findById(req.params.id);
+    const Property = await PropertyModel.findById(req.params.id);
     if (Property) {
       await Property.remove();
       res.json({ message: ' property deleted' });
