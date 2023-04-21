@@ -1,4 +1,5 @@
 const PropertyModel = require('../models/Property');
+const paginate = require("../utils/paginate")
 
 const createProperty = async (req, res, next) => {
   try {
@@ -33,8 +34,24 @@ const createProperty = async (req, res, next) => {
 // Get all  properties
 const getAllProperties = async (req, res) => {
   try {
-    const Properties = await Property.find();
-    res.json(Properties);
+   
+    const { state = null, city = null } = req.query;
+
+
+    const baseQuery = {
+      user: userId,
+  state,
+  city
+    };
+
+    if (search) {
+      const regex = new RegExp(search, "gi");
+      baseQuery.subject = regex;
+    }
+
+    const properties = await paginate(PropertyModel, baseQuery, req.query);
+ 
+    res.json(properties);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

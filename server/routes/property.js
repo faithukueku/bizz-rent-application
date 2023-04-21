@@ -10,6 +10,7 @@ const {
 
 const router = express.Router();
 
+//Todo protect routes
 
 router.get('/', getAllProperties);
 router.get('/:id', getPropertyById);
