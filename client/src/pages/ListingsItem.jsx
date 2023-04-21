@@ -76,7 +76,7 @@ Excellent transport links for a convenient commute 24-hour access so you can wor
 <div className="cost-calc">
     <h3>What will it cost ?</h3>
     <h5>Office space from #92000</h5>
-    <button className="btn btn-pr" onClick={openModal}>Make payments</button>
+    <button className="btn btn-pr" onClick={openModal}>Book now</button>
 </div>
 </div>
 

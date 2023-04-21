@@ -6,7 +6,7 @@ import SearchForm from "../components/SearchForm"
 const Listings = ()=>{
  const [location,setLocation] = useState("Lagos")
     return (
-        <div className="main-container-listing">
+        <div className="main-container-listing ">
 <div className = "listing-header">
     <h1>WorkPlaces in {location}</h1>
     <SearchForm/>

@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import Navbar from "../components/Navbar"
 import Spinner from "../components/Spinner"
 import { useNavigate } from 'react-router-dom';
-import { Link } from "react-router-dom";
+
 import "../styles/auth.css"
 import { login,signup } from "../services/service"
 
@@ -39,11 +38,13 @@ const [loading,setLoading] = useState(false)
       setLoading(true)
       const data = await login(email,password)
       if(data.status === "ok"){
-        localStorage.setItem("token",data.token)
+        localStorage.setItem("token",data.user)
         setLoading(false)
+
 
         // navigate to user property dashboard
         navigate(`/dashboard`);
+        window.location.reload();
       }
 else{
   alert(data.msg)
@@ -115,9 +116,7 @@ else{
                 Submit
               </button>
             </div>
-            <p className="text-center mt-2">
-              Forgot <a href="#">password?</a>
-            </p>
+          
           </div>
           <Spinner loading={loading}/>
         </form>

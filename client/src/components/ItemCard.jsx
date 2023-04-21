@@ -5,7 +5,7 @@ import mockImage from  "../assets/images/mock-image.jpg"
 import mockImage2 from  "../assets/images/mock-image-4.jpg"
 import mockImage3 from  "../assets/images/mock-image-3.jpg"
 import { useNavigate } from "react-router-dom";
-const ItemCard = ({id})=>{
+const ItemCard = ({id,type})=>{
 const navigate = useNavigate()
 
     return(
@@ -15,8 +15,7 @@ const navigate = useNavigate()
                 <img src={mockImage} style={{width:"90%",height:"100%"}}></img>
             </div>
             <div className="inner-image-split">
-                <div> <img src={mockImage2} style={{width:"100%",height:"100%"}}></img>
-                </div>
+           
                 <div> <img src={mockImage3} style={{width:"100%",height:"100%"}}></img>
                 </div>
             </div>
@@ -29,7 +28,8 @@ const navigate = useNavigate()
             </p>
             </div>
             <div className="btn-container">
-                <button className="btn btn-pr">Book now</button>
+
+                <button className="btn btn-pr">View details</button>
             </div>
            </div>
         </div>
