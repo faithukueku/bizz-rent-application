@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const User = require("./models/User");
+const login = require("./routes/login");
 
 
 const bcrypt = require("bcrypt");
@@ -34,6 +35,7 @@ app.use(express.json());
 app.use(cors()); // cross origin access
 app.use("/api/", login);
 app.use("/api/", signUp);
+app.use("/api/properties", "./routes/property");
 
 // error 404
 app.all("*", (req, res) => {

@@ -8,10 +8,14 @@ const User = new Schema(
     email: { type: String, unique: true, required: true },
     phoneNumber: { type: String, unique: true, required: true },
     password: { type: String, required: true },
-  },
-  { collection: "User-Data" }
+    officeSpace: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'RentalProperty'   
+  }],
+ 
+}
 );
 
-const model = mongoose.model("User-Data", User);
+const model = mongoose.model("User", User);
 
 module.exports = model;
