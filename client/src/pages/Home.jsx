@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="landing-container  row justify-content-center">
       <div className="content-landing col-md-6 order-sm-1">
-       
+        
         <p>
           {" "}
         Renting made easy

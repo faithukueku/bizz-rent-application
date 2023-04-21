@@ -2,13 +2,6 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const User = require("./models/User");
-const login = require("./routes/login");
-const signUp = require("./routes/signup");
-
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-
 const connectDB = require("./db/connect");
 require("dotenv").config();
 // access port
@@ -33,8 +26,7 @@ start();
 
 app.use(express.json());
 app.use(cors()); // cross origin access
-app.use("/api/", login);
-app.use("/api/", signUp);
+app.use("/api/auth", require("./routes/auth"));
 app.use("/api/properties", require("./routes/property"));
 
 // error 404

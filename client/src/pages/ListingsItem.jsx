@@ -3,7 +3,11 @@ import "../styles/Listings.css"
 import mockImage3 from  "../assets/images/mock-image-3.jpg"
 import Modal from 'react-modal';
 import React from "react";
+import { getPropertiesById } from "../services/service"
 import PaymentForm from "../components/PaymentForm";
+import { useState ,useEffect} from "react"
+
+import Spinner from "../components/Spinner"
 
 const customStyles = {
     content: {
@@ -23,7 +27,25 @@ const customStyles = {
   
 
 const ListingsItem = ()=>{
+  const [property,setProperty] = useState([])
+  const [loading,setLoading] = useState(false)
+ 
+  useEffect(()=>{
+    setLoading(true)
+    getPropertiesById(params.listId).then((data)=>{
+        setProperty(data)
+        setLoading(false)
+        console.log(property)
+    }).catch((e)=>{
+      alert("än error occured")
+     setLoading(false)
+  })
+},[])
+
+
+
     const params = useParams()
+    console.log(params)
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -40,8 +62,14 @@ const ListingsItem = ()=>{
     }
 
     return (
+
+      
         <div>
-             <Modal
+          
+    {
+        loading ? <Spinner/> :  <div>
+
+<Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
@@ -76,9 +104,17 @@ Excellent transport links for a convenient commute 24-hour access so you can wor
 <div className="cost-calc">
     <h3>What will it cost ?</h3>
     <h5>Office space from #92000</h5>
-    <button className="btn btn-pr" onClick={openModal}>Make payments</button>
+    <button className="btn btn-pr" onClick={openModal}>Book now</button>
 </div>
 </div>
+
+
+        </div>
+    
+    
+    
+    }
+       
 
 
 

@@ -26,24 +26,28 @@ const rentalPropertySchema = new mongoose.Schema({
     required: true
   },
   rent: {
-    type: Number,
+    type: String,
     required: true
   },
-  availableDate: {
-    type: Date,
-    required: true
+  isAvailable: {
+    type: String,
   },
   isBooked:Boolean,
   
-  landlord: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Landlord',
-    required: true
-  },
   paymentType:{
     type:String,
     enum:["monthly","yearly","weekly"]
-  }
+  },
+
+  isCleaningRequired: {
+    type: Boolean,
+    default:false
+  },
+  images:  Array,
+ 
+
+
+
 });
 
 const RentalProperty = mongoose.model('RentalProperty', rentalPropertySchema);

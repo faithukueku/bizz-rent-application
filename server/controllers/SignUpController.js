@@ -3,6 +3,10 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const SignUp = async (req, res) => {
   try {
+
+    const user = User.find({email:req.email})
+    if(user) return res.status(401).json({message:"this user already exist"})
+    
     const newPassword = await bcrypt.hash(req.body.password, 10);
     await User.create({
       name: req.body.name,
@@ -12,8 +16,8 @@ const SignUp = async (req, res) => {
     });
     res.json({ status:201 ,message:"account created successfully"});
   } catch (err) {
- 
-      res.json({ status: "error", error: "an error has occured pls try againY" });
+ console.log(err)
+      res.json({ status: "error", error: err.message });
   }
 };
 
