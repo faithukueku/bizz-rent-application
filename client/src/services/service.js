@@ -23,7 +23,7 @@ export const login = async (email, password) => {
 // Signup request
 export const signup = async (name, email, password,phoneNumber) => {
   try {
-    const response = await instance.post('/api/auth/signup', { name, email, password ,phoneNumber});
+    const response = await instance.post('/api/auth/signUp', { name, email, password ,phoneNumber});
     return response.data;
   } catch (error) {
     throw new Error(error.response.data.message);

@@ -171,12 +171,11 @@ else{
             />
           </div>
           <div className="form-group mt-3">
-            <label>Password</label>
+            <label>Phone number</label>
             <input
               type="text"
               className="form-control mt-1"
               placeholder="phone number"
-        
               name="phoneNumber"
                 onChange={handleInputChange}
             />
